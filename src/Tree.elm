@@ -27,3 +27,16 @@ insertAt new_node node_id (Node root) =
                 List.map (\c -> insertAt new_node node_id c) root.children
         in
         Node { root | children = new_children }
+
+
+isEqualTo : Node -> Node -> Bool
+isEqualTo (Node n) (Node m) =
+    if n.id /= m.id then
+        False
+
+    else if List.length n.children == List.length m.children then
+        List.map2 isEqualTo n.children m.children
+            |> List.all (\b -> b == True)
+
+    else
+        False
