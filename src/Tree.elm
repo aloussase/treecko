@@ -1,7 +1,5 @@
 module Tree exposing (..)
 
-import File exposing (File)
-
 
 type alias NodeId =
     String
@@ -11,7 +9,7 @@ type Node
     = Node
         { id : NodeId
         , name : String
-        , image : Maybe File
+        , image : String
         , children : List Node
         }
 

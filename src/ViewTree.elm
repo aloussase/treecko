@@ -11,7 +11,8 @@ renderTree : String -> Node -> Html Msg.Msg
 renderTree newNodeName (Node root) =
     div []
         [ div [ A.class "parent" ]
-            [ span [] [ text root.name ]
+            [ img [ A.src root.image, A.alt root.name, A.class "image" ] []
+            , span [] [ text root.name ]
             , button [ E.onClick (Msg.InsertNodeAt root.id newNodeName) ] [ text "+" ]
             ]
         , div

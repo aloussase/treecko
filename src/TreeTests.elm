@@ -13,16 +13,16 @@ suite =
                 \_ ->
                     let
                         tree =
-                            Node { id = "a", name = "", image = Nothing, children = [] }
+                            Node { id = "a", name = "", image = "", children = [] }
 
                         child1 =
-                            Node { id = "b", name = "", image = Nothing, children = [] }
+                            Node { id = "b", name = "", image = "", children = [] }
 
                         child2 =
-                            Node { id = "c", name = "", image = Nothing, children = [] }
+                            Node { id = "c", name = "", image = "", children = [] }
 
                         child3 =
-                            Node { id = "d", name = "", image = Nothing, children = [] }
+                            Node { id = "d", name = "", image = "", children = [] }
 
                         tree_ =
                             tree
@@ -37,10 +37,10 @@ suite =
                 \_ ->
                     let
                         n1 =
-                            Node { id = "a", children = [], image = Nothing, name = "" }
+                            Node { id = "a", children = [], image = "", name = "" }
 
                         n2 =
-                            Node { id = "a", children = [], image = Nothing, name = "" }
+                            Node { id = "a", children = [], image = "", name = "" }
                     in
                     Expect.equal True <| isEqualTo n1 n2
             , test "Two nodes are equal if their children have the same IDs" <|
@@ -78,4 +78,4 @@ suite =
 
 mkNode : NodeId -> List Node -> Node
 mkNode id children =
-    Node { id = id, children = children, image = Nothing, name = "" }
+    Node { id = id, children = children, image = "", name = "" }
